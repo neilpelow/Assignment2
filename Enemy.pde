@@ -26,7 +26,7 @@ class Enemy {
     {
       xpos = width;
       ypos = random(0, height);
-      speed = speed + 0.1;
+      speed = speed + 1;
     }
     
   }
