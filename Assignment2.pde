@@ -1,3 +1,10 @@
+import ddf.minim.spi.*;
+import ddf.minim.signals.*;
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.ugens.*;
+import ddf.minim.effects.*;
+
 float[] x = new float[500];
 float[] y = new float[500];
 float[] starspeed = new float[500];
@@ -16,6 +23,7 @@ boolean sketchFullScreen() {
   return ! devMode;
 }
 
+
 //initialise objects/functions
 Enemy Enemy1;
 Enemy Enemy2;
@@ -31,6 +39,8 @@ Objective Objective3;
 Objective Objective4;
 Objective Objective5;
 
+Minim minim;
+AudioPlayer sou;
 
 public void setup() {
   if (devMode)
@@ -69,6 +79,11 @@ public void setup() {
   Objective3 = new Objective(-1000, width - random(0, height), 6);
   Objective4 = new Objective(-1000, width - random(0, height), 9);
   Objective5 = new Objective(-1000, width - random(0, height), 8);
+  
+    //-----------------Sounds----------------//
+    minim = new Minim(this);
+    sou = minim.loadFile("Communications satellite.mp3");
+    sou.play();
   
   
 }
@@ -178,11 +193,10 @@ public void draw() {
       
       //Hold on Game Over screen for several seconds
       if(time <= 50) {
-        img = loadImage("gameover.jpg");
-        background(img);
+        background(255,0,0);
         fill(255);
         
-        text("Your score: "+ score, 320, 380);
+        text("Your score: "+ score, width/2, height/2);
         time++;
       }
       

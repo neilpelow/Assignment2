@@ -1,7 +1,6 @@
 void menu() 
 {
-  img = loadImage("menu.jpg");
-  background(/*img*/0);
+  background(0);
   fill(255, 0, 0);
   text("Press 'Y' to play\n\nPress 'N' to exit" , width/2.25, height - 150);
   
