@@ -16,7 +16,7 @@ class Enemy {
     rectMode(CENTER);
     fill(0);
     stroke(255, 0, 0);
-    rect(xpos, ypos, 20, 20);
+    triangle(xpos, ypos,xpos + 10, ypos + 10, xpos + 10, ypos - 10);
   }
   
   void drive() {
