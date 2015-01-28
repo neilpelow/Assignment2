@@ -82,8 +82,8 @@ public void setup() {
   
     //-----------------Sounds----------------//
     minim = new Minim(this);
-    sou = minim.loadFile("Communications satellite.mp3");
-    sou.play();
+    sou = minim.loadFile("gamemusic.mp3");
+    sou.loop();
   
   
 }
